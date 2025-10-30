@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+
+    <!-- Google Drive cloud backup / auto-restore -->
+    <cloud-backup>
+        <!-- Always keep Room DB + shared prefs -->
+        <include domain="database"   path="tracker.db"/>
+        <include domain="sharedpref" path="."/>
+
+        <!-- Only add these if you want external files backed up -->
+        <include domain="external" path="."/>
+        <!-- Exclude a subfolder under app-specific external storage -->
+        <exclude domain="external" path="cache_media/"/>
+    </cloud-backup>
+
+    <!-- Device-to-device transfer (ADB / Nearby) -->
+    <device-transfer>
+        <include domain="database"   path="tracker.db"/>
+        <include domain="sharedpref" path="."/>
+        <!-- Mirror the same policy here if you also want external files in device transfer -->
+        <include domain="external" path="."/>
+        <exclude domain="external" path="cache_media/"/>
+    </device-transfer>
+
+</data-extraction-rules>

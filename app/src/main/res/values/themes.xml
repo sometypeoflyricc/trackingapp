@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App theme -->
+    <style name="Theme.TrackingApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!-- Default widget styles -->
+        <item name="materialButtonStyle">@style/App.Button</item>
+        <item name="materialCardViewStyle">@style/App.Card</item>
+        <item name="textInputStyle">@style/App.TextInput</item>
+    </style>
+
+    <!-- Buttons -->
+    <style name="App.Button" parent="Widget.Material3.Button">
+        <item name="android:minHeight">52dp</item>
+        <item name="android:insetTop">6dp</item>
+        <item name="android:insetBottom">6dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconSize">20dp</item>
+    </style>
+
+    <!-- Cards (Material 3 CardView parent) -->
+    <style name="App.Card" parent="Widget.Material3.CardView.Filled">
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <!-- TextInputLayout -->
+    <style name="App.TextInput" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxCornerRadiusTopStart">14dp</item>
+        <item name="boxCornerRadiusTopEnd">14dp</item>
+        <item name="boxCornerRadiusBottomStart">14dp</item>
+        <item name="boxCornerRadiusBottomEnd">14dp</item>
+    </style>
+</resources>

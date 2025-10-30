@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Show weekly progress summary and quick actions, keep controls reachable on smaller devices.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <!-- Vertical stack for toolbar, progress card, toggle, and two rows of actions -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Top panel of the application (title only, navigation is handled in Activity) -->
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:title="@string/title_progress" />
+
+        <!-- Progress Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <!-- Rendered as "XX% (total / target) (+overage%)", updated by VM -->
+                <TextView
+                    android:id="@+id/summary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleLarge" />
+
+                <!-- Determinate progress bar (0..100)-->
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp" />
+
+                <!-- Shown when no goal is set, hides summary and progress -->
+                <TextView
+                    android:id="@+id/emptyState"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no_goal_message"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone"
+                    android:gravity="center"
+                    android:textAppearance="@style/TextAppearance.Material3.BodyLarge" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Toggle between minutes vs. "Hh Mm" format -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnToggleUnits"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/switch_units" />
+
+        <!-- Row 1, two action buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- Add a new entry -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLog"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="@string/log_entry"
+                android:textSize="18sp"
+                android:gravity="center"
+                app:icon="@android:drawable/ic_input_add"
+                app:iconGravity="top"
+                app:iconSize="36dp"
+                app:iconPadding="8dp" />
+
+            <!-- Set goal -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGoal"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="@string/set_goal"
+                android:textSize="18sp"
+                android:gravity="center"
+                app:icon="@android:drawable/ic_menu_set_as"
+                app:iconGravity="top"
+                app:iconSize="36dp"
+                app:iconPadding="8dp" />
+        </LinearLayout>
+
+        <!-- Row 2, entries list and reset action -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <!-- Open the entries overview list -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnViewEntries"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="@string/view_entries"
+                android:textSize="18sp"
+                android:gravity="center"
+                app:icon="@android:drawable/ic_menu_agenda"
+                app:iconGravity="top"
+                app:iconSize="36dp"
+                app:iconPadding="8dp" />
+
+            <!-- Clear all data -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnReset"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="@string/reset"
+                android:textSize="18sp"
+                android:gravity="center"
+                app:icon="@android:drawable/ic_menu_delete"
+                app:iconGravity="top"
+                app:iconSize="36dp"
+                app:iconPadding="8dp" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,32 @@
+# ----- Android / Gradle -----
+*.iml
+.gradle/
+**/build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Output artifacts
+*.apk
+*.aab
+
+# Keystores and secrets
+*.jks
+*.keystore
+
+# IDE
+.idea/
+
+# Local machine config
+local.properties
+
+# OS cruft
+.DS_Store
+**/.DS_Store
+Thumbs.db
+
+# Kotlin, Java outputs
+out/
+
+# Navigation editor cache
+.navigation/

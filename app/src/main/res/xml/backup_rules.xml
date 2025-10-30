@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Include your Room DB -->
+    <include domain="database" path="tracker.db" />
+
+    <!-- Optional: include all shared preferences now or later -->
+    <include domain="sharedpref" path="." />
+</full-backup-content>

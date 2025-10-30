@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">Trackingapp</string>
+
+    <!-- Screens / toolbars -->
+    <string name="title_progress">Your Progress</string>
+    <string name="title_goal">Set Goal</string>
+    <string name="title_entries">Entries</string>
+    <string name="title_log_entry">Log Entry</string>
+    <string name="title_edit_entry">Edit Entry</string>
+
+    <!-- Buttons / common -->
+    <string name="save">Save</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="save_goal">Save Goal</string>
+    <string name="view_entries">View Entries</string>
+    <string name="set_goal">Set Goal</string>
+    <string name="log_entry">Log Entry</string>
+    <string name="reset">Reset</string>
+    <string name="switch_units">Switch Units (min -> h:m)</string>
+
+    <!-- Dialogs / messages -->
+    <string name="delete_entry_title">Delete entry?</string>
+    <string name="delete_entry_message">This will remove %1$d minutes from your progress.</string>
+    <string name="all_data_cleared">All data cleared</string>
+    <string name="congrats_exceeded">Great job! You reached your goal and exceeded it by %1$d%%.</string>
+    <string name="no_goal_message">No goal set yet. Tap \'Set Goal\' to begin!</string>
+
+    <!-- Validation -->
+    <string name="enter_positive_number">Please enter a positive number</string>
+    <string name="enter_valid_amount">Enter a valid amount</string>
+    <string name="enter_positive_target">Enter a positive target</string>
+    <string name="missing_entry_id">Can\'t edit: missing entry id</string>
+    <string name="entry_updated">Entry updated</string>
+
+    <!-- Hints / labels -->
+    <string name="hint_amount">Amount (e.g., minutes)</string>
+    <string name="hint_note">Note (optional)</string>
+    <string name="hint_weekly_target">Weekly target (e.g., 600)</string>
+</resources>
